@@ -19,5 +19,8 @@
   "homepage": "https://github.com/renannakatani/teste-ebac-ui#readme",
   "devDependencies": {
     "cypress": "^12.3.0"
+  },
+  "dependencies": {
+    "@faker-js/faker": "github:faker-js/faker"
   }
 }
