@@ -24,7 +24,7 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-const cypress = require("cypress")
+import { Commands } from "cypress"
 
 Cypress.Commands.add('login', (usuario, senha) => { 
     cy.get('#username').type(usuario)
@@ -32,7 +32,7 @@ Cypress.Commands.add('login', (usuario, senha) => {
     cy.get('.woocommerce-form > .button').click()
  })
 
- cypress.Commands.add('pre-Cadastro', (email, senha, nome, sobrenome) =>{
+ Commands.add('pre-Cadastro', (email, senha, nome, sobrenome) =>{
     cy.get('#reg_email').type(email)
         cy.get('#reg_password').type(senha)
         cy.get(':nth-child(4) > .button').click()

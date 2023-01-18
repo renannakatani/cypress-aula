@@ -1,5 +1,6 @@
 /// <reference types="cypress" />
 
+
 describe('Funcionalidade Endereços - Faturamentoo e Entrega', () => {
     beforeEach(() => {
         cy.visit('minha conta')
