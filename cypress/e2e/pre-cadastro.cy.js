@@ -28,4 +28,9 @@ let emailFaker = _faker.internet.email(nomeFaker)
 
     })
 
+    it.only('Deve completar o pré-cadastro com sucesso usando Comandos customizados', () => {
+        let emailFaker2 = _faker.internet.email(nomeFaker)
+        cy.preCadastro(emailFaker2, 'senha@forte', 'Renan', 'Nakatani')
+    });
+
 });
