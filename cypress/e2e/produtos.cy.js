@@ -14,7 +14,7 @@ describe('Funcionalidade Página de produtos', () => {
             .contains('Abominable Hoodie')
             .click()
     });
-    it.only('Deve adicionar um produto ao carrinho', () => {
+    it('Deve adicionar um produto ao carrinho', () => {
         var quantidade = 10
 
         cy.get('[class="product-block grid"]')
@@ -28,5 +28,11 @@ describe('Funcionalidade Página de produtos', () => {
         cy.get('.woocommerce-message').should('contain', quantidade + ' × “Abominable Hoodie” foram adicionados no seu carrinho.')
     })
 
-
+    it.only('Deve adicionar produtos ao carrinho - Usando Comando customizado ', () => {
+        cy.addProdutos('Ajax Full-Zip Sweatshirt', 'M', 'Red', 3)
+    });
 });
+
+
+
+
