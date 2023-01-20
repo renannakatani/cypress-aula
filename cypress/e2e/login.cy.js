@@ -1,5 +1,5 @@
 /// <reference types="cypress"/>
-const perfil = require('../fixtures/perfi.json')
+const perfil = require('../fixtures/perfil.json')
 
 context('Funcionalidade Login', () =>{
 
@@ -22,20 +22,19 @@ context('Funcionalidade Login', () =>{
     })
 
     it('Deve fazer login com sucesso - Usando arquivo de dados ', () => {
-        cy.get('#username').type(perfil.usuario)
-        cy.get('#password').type(perfil.senha)
+        cy.get('#username').type(usuario)
+        cy.get('#password').type(senha)
         cy.get('.woocommerce-form > .button').click()
 
         cy.get('.page-title').should('contain' , 'Minha conta')
     });
 
-    it('Deve fazer login com sucesso - Usando fixture', () => {
-        cy.fixture('perfi').then(dados => {
-            cy.get('#username').type(dados.usuario)
-            cy.get('#password').type(dados.senha, {log: false})
+    it('Deve fazer login com sucesso - com fixture', () => {
+        cy.fixture('perfil').then(dados => {
+            cy.get('#username').type(perfil.usuario)
+            cy.get('#password').type(perfil.senha, {log:false})
             cy.get('.woocommerce-form > .button').click()
-    
-            cy.get('.page-title').should('contain' , 'Minha conta')
+            cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá,')
         })
     });
 
